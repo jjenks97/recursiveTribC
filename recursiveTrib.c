@@ -5,12 +5,9 @@
 int tribonacci(int t0, int t1, int t2, int n) {
     //adds t2, t1, and t0 and sets it equal to temp
     int temp = t2 + t1 + t0;
-    t0 = t1;
-    t1 = t2;
-    t2 = temp;
     if (n > 0) {
         // calls tribonnacci again with n = n-1
-        temp = tribonacci(t0, t1, t2, n - 1);
+        temp = tribonacci(t1, t2, temp, n - 1);
     }
     // returns temp when n <= 0
     return temp;
